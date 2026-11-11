@@ -1,0 +1,15 @@
+[gd_resource type="Theme" format=3 uid="uid://b0cdkyrqu605o"]
+
+[ext_resource type="StyleBox" uid="uid://cfu20c28kr0hw" path="res://scenes/main_menu/buttonStyleBoxFlat.tres" id="1_4i3no"]
+[ext_resource type="StyleBox" uid="uid://cql5idwdonqow" path="res://scenes/main_menu/customButtonStyleBoxFlat.tres" id="2_p7ftv"]
+[ext_resource type="StyleBox" uid="uid://d1gp8r7xste47" path="res://scenes/main_menu/panelContainerStyleBoxFlat.tres" id="2_srjjl"]
+[ext_resource type="StyleBox" uid="uid://cdfh5qch7pgib" path="res://scenes/main_menu/labelStyleBoxEmpty.tres" id="2_ykcyr"]
+
+[resource]
+Button/styles/normal = ExtResource("1_4i3no")
+CustomButton/base_type = &"Button"
+CustomButton/styles/normal = ExtResource("2_p7ftv")
+Label/font_sizes/font_size = 32
+Label/styles/normal = ExtResource("2_ykcyr")
+PanelContainer/styles/panel = ExtResource("2_srjjl")
+VBoxContainer/constants/separation = 20

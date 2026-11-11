@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b00bqp2cvtdlk"]
+
+[ext_resource type="Theme" uid="uid://b0cdkyrqu605o" path="res://scenes/main_menu/mainMenuTheme.tres" id="1_7qsbu"]
+
+[node name="CenterContainer" type="CenterContainer" unique_id=764416325]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1847137401]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme = ExtResource("1_7qsbu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=859705959]
+layout_mode = 2
+theme = ExtResource("1_7qsbu")
+
+[node name="titleLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=175619908]
+layout_mode = 2
+theme = ExtResource("1_7qsbu")
+text = "Legacy of the Forge"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="newGameButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=206114705]
+layout_mode = 2
+theme = ExtResource("1_7qsbu")
+theme_type_variation = &"CustomButton"
+text = "New Game"
+
+[node name="continueGameButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1025135095]
+layout_mode = 2
+text = "Continue"
+
+[node name="settingsButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1721152628]
+layout_mode = 2
+text = "Settings"
+
+[node name="quitButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1779548280]
+layout_mode = 2
+text = "Quit"
