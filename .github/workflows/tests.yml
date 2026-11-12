@@ -1,31 +1,29 @@
+
 name: Tests
 
 on:
   push:
     branches-ignore:
       - main
-      - master
 
 permissions:
   contents: read
 
 jobs:
   test:
+    name: Run GdUnit4 Tests
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+
     steps:
-      - name: Check out repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Godot
-        uses: chickensoft-games/setup-godot@v2
-        with:
-          version: 4.7.0
-          use-dotnet: false
-          include-templates: false
-
-      - name: Import project
-        run: godot --headless --editor --path legacy-of-the-forge --quit
-
       - name: Run GdUnit4 tests
-        working-directory: legacy-of-the-forge
-        run: godot --headless --path . -s -d --remote-debug tcp://127.0.0.1:0 res://addons/gdUnit4/bin/GdUnitCmdTool.gd
+        uses: godot-gdunit-labs/gdUnit4-action@v1
+        with:
+          godot-version: '4.7'
+          version: installed
+          paths: 'res://tests'
+          timeout: 10
+          arguments: '--continue'
