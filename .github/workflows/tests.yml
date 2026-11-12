@@ -22,6 +22,7 @@ jobs:
       - name: Run GdUnit4 tests
         uses: godot-gdunit-labs/gdUnit4-action@v1
         with:
+          project_dir: './legacy-of-the-forge/'
           godot-version: '4.7'
           version: installed
           paths: 'res://tests'
