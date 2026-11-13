@@ -19,12 +19,27 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Verify test suites exist
+        shell: bash
+        run: |
+          TEST_DIR="legacy-of-the-forge/test"
+
+          if [[ ! -d "$TEST_DIR" ]]; then
+            echo "::error::Test directory not found: $TEST_DIR"
+            exit 1
+          fi
+
+          if ! find "$TEST_DIR" -type f -name '*_test.gd' -print -quit | grep -q .; then
+            echo "::error::No GdUnit4 test suites found!"
+            exit 1
+          fi
+
       - name: Run GdUnit4 tests
         uses: godot-gdunit-labs/gdUnit4-action@v1
         with:
           project_dir: './legacy-of-the-forge/'
           godot-version: '4.7'
           version: installed
-          paths: 'res://tests'
+          paths: 'res://test'
           timeout: 10
           arguments: '--continue'
